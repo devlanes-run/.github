@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem with devlanes.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For vulnerabilities, follow the [security policy](https://github.com/devlanes-run/.github/blob/main/SECURITY.md) instead of opening a public issue.
+        Remove secrets, private hostnames and personal paths from configurations and logs.
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Before reporting
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Versions and environment
+      description: Include the affected component, version, OS and architecture. For remote problems, describe both machines.
+      placeholder: |
+        Component and version:
+        OS and architecture:
+        Local or remote:
+        Relevant tools and versions (Docker, runtime, etc.):
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Provide exact steps and a minimal configuration or a link to a small reproduction repository. Mention whether multiple lanes or worktrees are involved.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and logs
+      description: Include relevant command output and error messages. Review logs for sensitive information before posting.
+    validations:
+      required: true
+  - type: textarea
+    id: ai-disclosure
+    attributes:
+      label: AI usage
+      description: State whether AI tools were used in the affected code, configuration or reproduction. If so, name the tool and describe its role.
+      placeholder: No AI used, or AI used with the tool and purpose.
+    validations:
+      required: true
